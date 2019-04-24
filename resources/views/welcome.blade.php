@@ -85,7 +85,7 @@
                 </div>
 
                 <div class="links">
-                    <img src="{{asset('admin/images/beauty.jpg')}}" alt="">
+                    <img src="{{asset('admin/images/fun.png')}}" alt="">
                 </div>
             </div>
         </div>
