@@ -25,12 +25,13 @@ class AuthController extends Controller
      */
     public function login(Request $request)
     {
-        $user = User::where('phone', $request->input())->first();
-
-//        if (! $token = auth('api')->attempt($credentials)) {
-//            return response()->json(['error' => 'Unauthorized'], 401);
-//        }
-
+//        $user = User::where('phone', $request->input())->first();
+        $credentials = $request->only('phone');
+        dd(auth('api')->attempt($credentials));
+        if (! $token = auth('api')->attempt($credentials)) {
+            return response()->json(['error' => 'Unauthorized'], 401);
+        }
+        dd(auth('api'));
         if (! $token = auth('api')->login($user)) {
             return response()->json(['error' => 'Unauthorized'], 401);
         }
