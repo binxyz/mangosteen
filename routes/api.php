@@ -13,5 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('login', "Api\AuthController@login");
+Route::post('login', "Api\AuthController@login");
 Route::get('me', "Api\AuthController@info");
